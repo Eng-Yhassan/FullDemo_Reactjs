@@ -16,7 +16,8 @@ export default function Shop() {
   const filterXog = xog.filter((xog2) => {
     const SearchData =
       xog2.title.toLowerCase().includes(search.toLowerCase()) ||
-      xog2.category.toLowerCase().includes(search.toLowerCase());
+      xog2.category.toLowerCase().includes(search.toLowerCase()) || 
+      xog2.price.toString().includes(search.toString()) ;
     const FilterCategory = category ? xog2.category === category : true
     return SearchData && FilterCategory
   })
