@@ -1,7 +1,6 @@
 import Cards from '../components/Cards'
 import { useSelector } from 'react-redux'
 import { data } from 'react-router-dom'
-
 function Cart() {
     const items= useSelector((state)=> state.CartCount.item)
   return (
@@ -27,5 +26,4 @@ function Cart() {
     </div>
   )
 }
-
 export default Cart

@@ -1,13 +1,10 @@
 import { addToCart } from "../Redux/Reduce/Cart"
 import { useDispatch } from "react-redux"
-
 export default function Cards({product}) {
     const dispatch= useDispatch()
-
     const HandleDispatch=()=>{
         dispatch(addToCart(product))
     }
-
     return (
         <div>
             <div className='w-80 h-[350px]  rounded-lg  border-2 border-black  p-2'>

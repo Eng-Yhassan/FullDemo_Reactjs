@@ -4,7 +4,6 @@ import './index.css'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
 import cartConfig from './Redux/Store/Store'
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={cartConfig}>

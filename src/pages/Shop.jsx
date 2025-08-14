@@ -1,18 +1,15 @@
 import Cards from '../components/Cards'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-
 export default function Shop() {
   const [xog, setXog] = useState([])
   const [search, setSearch] = useState("")
   const [category, setCategory] = useState("")
-
   const handlXog = () => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
       setXog(response.data)
     }).catch(error => console.log(error));
   }
-
   const filterXog = xog.filter((xog2) => {
     const SearchData =
       xog2.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -21,11 +18,9 @@ export default function Shop() {
     const FilterCategory = category ? xog2.category === category : true
     return SearchData && FilterCategory
   })
-
   useEffect(() => {
     handlXog()
   }, [])
-
   return (<>
     {/* Filter */}
     <div className='flex gap-20 mx-20 mt-20 '>
